@@ -4,12 +4,17 @@
 #include <Servo.h>
 #include <Wire.h>
 
+// declara e inicia tus variables aca:
+
+
 void setup() {
-  // put your setup code here, to run once:
+  // pon tu codigo de configuracion aca, que correra una sola vez:
+
 
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // pon tu codigo principal aca, que correra repetidas veces:
+
 
 }

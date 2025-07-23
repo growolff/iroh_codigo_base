@@ -1,0 +1,51 @@
+###########################################
+# Syntax Coloring Map For KnightRoboticsLibs_Iroh
+###########################################
+ 
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+KnightRoboticsLibs_Iroh	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+retroceder	KEYWORD2
+avanzar	KEYWORD2
+detenerse	KEYWORD2
+girarDerecha	KEYWORD2
+girarIzquierda	KEYWORD2
+inicializarMovimientoRobot	KEYWORD2
+inicializarSensoresRobot	KEYWORD2
+inicializarCabezaRobot	KEYWORD2
+apagarCabezaRobot	KEYWORD2
+inicializarGolpeRobot	KEYWORD2
+inicializarMovimiento	KEYWORD2
+inicializarSensores	KEYWORD2
+inicializarCabeza	KEYWORD2
+apagarCabeza	KEYWORD2
+inicializarGolpe	KEYWORD2
+inicializarPantallaRobot	KEYWORD2
+inicializarPantalla	KEYWORD2
+moverServoYaw	KEYWORD2
+moverServoPitch	KEYWORD2
+moverServoGolpe	KEYWORD2
+leerBoton	KEYWORD2
+leerDistanciaSonar	KEYWORD2
+leerSensorLineaIzquierdo	KEYWORD2
+leerSensorLineaCentral	KEYWORD2
+leerSensorLineaDerecho	KEYWORD2
+leerSensorObstaculoIzquierdo	KEYWORD2
+leerSensorObstaculoDerecho	KEYWORD2
+escribirPantalla	KEYWORD2
+apagarPantalla	KEYWORD2
+prenderPantalla	KEYWORD2
+borrarPantalla	KEYWORD2
+botonInicio	KEYWORD2
+finPrograma	KEYWORD2
+pausa	KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################

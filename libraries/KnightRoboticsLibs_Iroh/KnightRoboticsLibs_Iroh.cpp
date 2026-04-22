@@ -493,12 +493,12 @@ int leerSensorLineaDerecho(){
 
 int leerSensorObstaculoIzquierdo(){
 
-	return digitalRead(leftProximityPin);
+	return !digitalRead(leftProximityPin);
 }
 
 int leerSensorObstaculoDerecho(){
 
-	return digitalRead(rightProximityPin);
+	return !digitalRead(rightProximityPin);
 }
 
 void moverServoYaw(int pos){

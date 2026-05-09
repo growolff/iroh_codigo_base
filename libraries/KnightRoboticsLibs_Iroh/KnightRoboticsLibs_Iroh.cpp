@@ -28,7 +28,7 @@
 //  POSSIBILITY OF SUCH DAMAGE.                                                      //
 //                                                                                   //
 //                                                                                   //
-//  Last updated on 03/03/2023                                                       //
+//  Last updated on 30/04/2026                                                       //
 //  Compatible with the Arduino IDE 1.82 y 2.0                                       //
 //  Library version: 4                                                               //
 //  Robot version: Iroh                                                              //
@@ -46,7 +46,7 @@
 #include <LiquidCrystal_I2C.h>
 
 #define MIN_SPEED_PWM 50
-#define MAX_SPEED_PWM 200
+#define MAX_SPEED_PWM 150
 
 // DATOS SONAR
 #define TRIGGER_PIN  13  // Arduino pin tied to trigger pin on the ultrasonic sensor.
@@ -248,20 +248,20 @@ void inicializarMovimiento(){
 
 void inicializarSensoresRobot(){
 
-//Sensores
-  pinMode(rightProximityPin, INPUT);
-  pinMode(leftProximityPin, INPUT);
-  
+ 
+  pinMode(rightProximityPin, INPUT_PULLUP);
+  pinMode(leftProximityPin, INPUT_PULLUP);
+
   pinMode(startbutton, INPUT);
 
 }
 
 void inicializarSensores(){
 
-//Sensores
-  pinMode(rightProximityPin, INPUT);
-  pinMode(leftProximityPin, INPUT);
   
+  pinMode(rightProximityPin, INPUT_PULLUP);
+  pinMode(leftProximityPin, INPUT_PULLUP);
+
   pinMode(startbutton, INPUT);
 
 }
@@ -490,15 +490,27 @@ int leerSensorLineaDerecho(){
 
 	return analogRead(sensorLineaDerecho_);
 }
-
+//Tuneado por Martin Figueroa may26
+//resuelve logica inversa con 3 comparaciones para evitar lecturas erroneas, si 2 o más dan el mismo resultado, se toma como prendido, si 1 o ninguno da resultados, se toma como apagado
 int leerSensorObstaculoIzquierdo(){
+  int a = !digitalRead(leftProximityPin);
+  delayMicroseconds(200);
+  int b = !digitalRead(leftProximityPin);
+  delayMicroseconds(200);
+  int c = !digitalRead(leftProximityPin);
+  return ((a + b + c) >= 2) ? 1 : 0;
 
-	return !digitalRead(leftProximityPin);
 }
-
+//Tuneado por Martin Figueroa may26
+//resuelve logica inversa con 3 comparaciones para evitar lecturas erroneas, si 2 o más dan el mismo resultado, se toma como prendido, si 1 o ninguno da resultados, se toma como apagado
 int leerSensorObstaculoDerecho(){
+  int a = !digitalRead(rightProximityPin);
+  delayMicroseconds(200);
+  int b = !digitalRead(rightProximityPin);
+  delayMicroseconds(200);
+  int c = !digitalRead(rightProximityPin);
+  return ((a + b + c) >= 2) ? 1 : 0;
 
-	return !digitalRead(rightProximityPin);
 }
 
 void moverServoYaw(int pos){
